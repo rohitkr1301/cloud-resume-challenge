@@ -1,11 +1,12 @@
 async function getVisitorCount() {
     try {
-        const response = await fetch();
+        const response = await fetch("https://func-cloudresume-dev-e6cycaebhwezb3bz.australiaeast-01.azurewebsites.net/api/visitors");
 
-        if (!response.ok)
-            error = "API error"
-        
-        data = response.json()
+        if (!response.ok){
+            throw new Error("API error");
+
+        }
+        const data = await response.json()
 
         document.getElementById("visitor-count").textContent = data.count;
         
