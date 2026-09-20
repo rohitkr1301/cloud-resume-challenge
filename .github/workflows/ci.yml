@@ -8,5 +8,7 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: print text
-              run: echo "Hello from Github Actions"
+            - name: Checkout
+              uses: actions/checkout@v7.0.1
+            - name: check repo
+              run: ls -la
